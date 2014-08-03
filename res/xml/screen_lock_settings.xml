@@ -48,4 +48,10 @@
         android:title="@string/unlock_quick_unlock_control_title"
         android:summary="@string/unlock_quick_unlock_control_summary" />
 
+    <!-- Custom additions, available in pin/pattern/password/slide -->
+    <SwitchPreference
+        android:key="lockscreen_scramble_pin_layout"
+        android:title="@string/unlock_scramble_pin_layout_title"
+        android:summary="@string/unlock_scramble_pin_layout_summary" />
+
 </PreferenceScreen>
