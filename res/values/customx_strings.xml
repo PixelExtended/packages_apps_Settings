@@ -12,8 +12,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="build_date">Build date</string>
     <!-- PEX version in About phone -->
     <string name="pex_version_title">Extended version</string>
+    <string name="build_date">Build date</string>
+
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">Reset stats</string>
+    <string name="battery_stats_message">Battery history stats are going to be reset</string>
+
 </resources>
 
