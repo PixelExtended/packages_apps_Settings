@@ -395,5 +395,9 @@
     <!-- QS tiles Accent color tinting -->
     <string name="tint_qs_tiles_title">QS tiles tint</string>
     <string name="tint_qs_tiles_summary">Tint QS tiles with color accent</string>
+
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">Reset stats</string>
+    <string name="battery_stats_message">Battery history stats are going to be reset</string>
 </resources>
 
