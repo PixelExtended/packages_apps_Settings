@@ -46,5 +46,12 @@
         android:summary="@string/fod_gesture_summary"
         android:defaultValue="true"
         settings:controller="com.android.settings.security.FodGesturePreferenceController" />
+    <!-- Lineage additions, available in pin/pattern/password/slide -->
+
+    <!-- available in pin/password -->
+    <SwitchPreference
+        android:key="lockscreen_quick_unlock_control"
+        android:title="@string/unlock_quick_unlock_control_title"
+        android:summary="@string/unlock_quick_unlock_control_summary" />
 
 </PreferenceScreen>
