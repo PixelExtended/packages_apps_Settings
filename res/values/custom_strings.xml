@@ -127,5 +127,8 @@
     <!-- Black theme -->
     <string name="system_black_theme_title">Use Black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
-k>>>>>>> 77a08b4879 (Settings: Add toggle for black theme [2/3])
+
+    <!-- Pocket mode -->
+    <string name="proximity_wake_title">Prevent accidental wake-up</string>
+    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 </resources>
