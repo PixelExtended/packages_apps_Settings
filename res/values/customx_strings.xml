@@ -45,5 +45,9 @@
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
     <string name="adaptive_playback_timeout_10_min_summary">On (10 minutes)</string>
     <string name="adaptive_playback_explainer">Adaptive playback automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time.</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
 
