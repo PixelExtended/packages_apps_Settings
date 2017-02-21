@@ -421,5 +421,23 @@
 
 <!-- Back gesture vibration -->
     <string name="back_gesture_haptic_message">Enable haptic feedback for back gesture.</string>
+<<<<<<< HEAD
+=======
+
+<!-- Switch styles -->
+    <string name="switch_style_title">Switch Styles</string>
+    <string name="switch_default">Default</string>
+    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_narrow">Narrow</string>
+    <string name="switch_contained">Contained</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_style_dialog_title">Select switch style set</string>
+    
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+
+>>>>>>> cb6b383f26... Settings: Add pocket lock toggle
 </resources>
 
