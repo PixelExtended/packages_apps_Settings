@@ -6,10 +6,11 @@
     android:title="@string/status_bar_title">
 
     <PreferenceScreen
-        android:fragment="com.android.settings.custom.statusbar.NetworkTrafficSettings"
-        android:key="network_traffic_settings"
-        android:title="@string/network_traffic_settings_title"
-        android:summary="@string/network_traffic_settings_summary" />
+        android:key="traffic"
+        android:fragment="com.android.settings.custom.statusbar.Traffic"
+        android:order="-10"
+        android:icon="@drawable/ic_traffic"
+        android:title="@string/traffic_title" />
 
     <PreferenceCategory
         android:title="@string/status_bar_icons_title">

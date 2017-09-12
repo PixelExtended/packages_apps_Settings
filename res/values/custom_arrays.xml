@@ -247,32 +247,16 @@
     </string-array>
 
     <!-- Network Traffic -->
-    <string-array name="network_traffic_mode_entries" translatable="false">
-        <item>@string/network_traffic_mode_disable</item>
-        <item>@string/network_traffic_mode_up</item>
-        <item>@string/network_traffic_mode_down</item>
-        <item>@string/network_traffic_mode_all</item>
+    <string-array name="show_network_traffic_type_entries" translatable="false">
+        <item>@string/show_network_traffic_up</item>
+        <item>@string/show_network_traffic_down</item>
+        <item>@string/show_network_traffic_all</item>
     </string-array>
 
-    <string-array name="network_traffic_mode_values" translatable="false">
-        <item>0</item>
+    <string-array name="show_network_traffic_type_values" translatable="false">
         <item>1</item>
         <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="network_traffic_units_entries" translatable="false">
-        <item>@string/network_traffic_units_kilobits</item>
-        <item>@string/network_traffic_units_megabits</item>
-        <item>@string/network_traffic_units_kilobytes</item>
-        <item>@string/network_traffic_units_megabytes</item>
-    </string-array>
-
-    <string-array name="network_traffic_units_values" translatable="false">
         <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
     </string-array>
 
     <!-- QS customization -->
