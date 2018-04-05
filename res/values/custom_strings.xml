@@ -120,4 +120,7 @@ Notifications may be delayed for these apps."</string>
     <!-- Charging vibration -->
     <string name="charging_vibro_title">Charging vibration</string>
 
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Saved Earbuds</string>
+
 </resources>
