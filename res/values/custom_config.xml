@@ -26,4 +26,7 @@
     <!-- Diagonal Screen length provided -->
     <string name="config_screen_diagonal_length" translatable="false"></string>
 
+    <!-- Hardware info -->
+    <string name="platform_revision">Platform</string>
+    <string name="total_ram">Total RAM</string>
 </resources>
