@@ -11,6 +11,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="build_date">Build date</string>
     <!-- PEX version in About phone -->
     <string name="pex_version_title">Extended version</string>
 </resources>
