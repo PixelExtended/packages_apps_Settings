@@ -140,4 +140,7 @@
     <string name="pex_maintainer_name" translatable="false">Aryan Gupta (heisinbug)</string>
     <string name="pex_maintainer_group" translatable="false">https://t.me/pixelextended</string>
 
+    <!-- Density category -->
+    <string name="density_category">Density options</string>
+
 </resources>
