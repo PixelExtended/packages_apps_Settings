@@ -91,4 +91,8 @@
     <string name="navbar_radius">Gesture bar Radius</string>
     <string name="small_label">1 dp</string>
     <string name="big_label">4 dp</string>
+
+   <!-- FontEngine -->
+    <string name="font_picker_title">Font</string>
+    <string name="disable_fonts_installed_title">Font picker is unavailable to avoid conflicts with Substratum. Uninstall it if you wish to use the font picker.</string>
 </resources>
