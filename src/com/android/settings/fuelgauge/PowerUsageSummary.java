@@ -249,17 +249,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-	if (KEY_BATTERY_TEMP.equals(preference.getKey())) {
-            if (batteryTemp) {
-                mBatteryTemp.setSubtitle(
-                    CutoutFullscreenController.batteryTemperature(getContext(), false));
-                batteryTemp = false;
-            } else {
-                mBatteryTemp.setSubtitle(
-                    CutoutFullscreenController.batteryTemperature(getContext(), true));
-                batteryTemp = true;
-            }
-        } 
         if (KEY_BATTERY_HEADER.equals(preference.getKey())) {
             new SubSettingLauncher(getContext())
                         .setDestination(PowerUsageAdvanced.class.getName())
@@ -267,7 +256,9 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                         .setTitleRes(R.string.advanced_battery_title)
                         .launch();
             return true;
-        }
+        } else if (KEY_BATTERY_TEMP.equals(preference.getKey())) {
+            updateBatteryTempPreference();
+        } 
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -383,9 +374,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateLastFullChargePreference();
         mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
                 mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
-       mBatteryTemp.setSubtitle(
-                CutoutFullscreenController.batteryTemperature(getContext(), batteryTemp));
-	final long elapsedRealtimeUs = SystemClock.elapsedRealtime() * 1000;
+        updateBatteryTempPreference();
     }
 
     @VisibleForTesting
@@ -413,6 +402,19 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
             mLastFullChargePref.setSummary(
                     StringUtil.formatRelativeTime(getContext(), lastFullChargeTime,
                             false /* withSeconds */));
+        }
+    }
+
+    @VisibleForTesting
+    void updateBatteryTempPreference() {
+        if (batteryTemp) {
+            mBatteryTemp.setSummary(
+                CutoutFullscreenController.batteryTemperature(getContext(), false));
+            batteryTemp = false;
+        } else {
+            mBatteryTemp.setSummary(
+                CutoutFullscreenController.batteryTemperature(getContext(), true));
+            batteryTemp = true;
         }
     }
 

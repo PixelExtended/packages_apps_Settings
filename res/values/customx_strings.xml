@@ -443,5 +443,7 @@
    <!-- IME block back -->
     <string name="back_block_ime_title">Disable height of virtual keyboard as touchable region for back gesture</string>
 
+<!-- Battery temp -->
+    <string name="battery_temp_title">Battery temperature</string>
 </resources>
 
