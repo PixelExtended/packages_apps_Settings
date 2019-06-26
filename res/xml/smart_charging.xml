@@ -35,6 +35,13 @@
         android:defaultValue="80"
         android:dependency="smart_charging" />
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="smart_charging_reset_stats"
+        android:title="@string/smart_charging_reset_stats_title"
+        android:summary="@string/smart_charging_reset_stats_summary"
+        android:defaultValue="false"
+        android:dependency="smart_charging" />
+
      <com.android.settings.custom.preference.CustomSeekBarPreference
         android:key="smart_charging_resume_level"
         android:title="@string/smart_charging_resume_level_title"
