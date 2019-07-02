@@ -233,4 +233,9 @@
     <string name="theming_settings_dashboard_icons_plain">Transparent background / Plain foreground</string>
     <string name="theming_settings_dashboard_icons_plain_accent">Transparent background / Accent foreground</string>
 
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Double tap</string>
+    <string name="doze_double_tap_title">Double tap to check phone</string>
+    <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
+
 </resources>
