@@ -26,10 +26,6 @@
     <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Locate the fingerprint sensor on the left side of your tablet.</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Locate the fingerprint sensor on the right side of your tablet.</string>
 
-    <!-- Screen off fod -->
-    <string name="fod_gesture_title">Unlock with fingerprint when the screen is off</string>
-    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
-
     <!-- Battery light -->
     <string name="battery_light_title">Turn on the light when charging</string>
 
@@ -53,10 +49,6 @@
     <string name="data_usage_app_restrict_wifi">Wi\u2011Fi data</string>
     <string name="data_usage_app_restrict_wifi_summary">Enable usage of Wi\u2011Fi data</string>
 
-    <!-- Misc gesture settings -->
-    <string name="back_gesture_haptic_title">Haptic feedback</string>
-    <string name="back_gesture_haptic_summary">Enable haptic tick effect on back gesture</string>
-
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
 
@@ -70,4 +62,8 @@
     <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
     <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery</string>
+
+   <!-- Misc gesture settings -->
+    <string name="back_gesture_haptic_title">Haptic feedback</string>
+    <string name="back_gesture_haptic_summary">Enable haptic tick effect on back gesture</string>
 </resources>
