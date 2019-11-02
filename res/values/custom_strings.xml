@@ -131,4 +131,8 @@
     <string name="other_controls_title">Other controls</string>
     <string name="fullscreen_gestures_title">Fullscreen gestures</string>
     <string name="fullscreen_gestures_summary">Hide navbar pill and keyboard space</string>
+
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Ambient music ticker</string>
+    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
 </resources>
