@@ -436,8 +436,12 @@
     <string name="switch_md2">MD2</string>
     <string name="switch_retro">Retro</string>
 
-<!-- StatusBar notification count -->
+   <!-- StatusBar notification count -->
     <string name="notif_count_title">Notification count</string>
     <string name="notif_count_summary">Show notification count near notfication icons</string>
+
+   <!-- IME block back -->
+    <string name="back_block_ime_title">Disable height of virtual keyboard as touchable region for back gesture</string>
+
 </resources>
 
