@@ -419,5 +419,7 @@
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
+<!-- Back gesture vibration -->
+    <string name="back_gesture_haptic_message">Enable haptic feedback for back gesture.</string>
 </resources>
 
