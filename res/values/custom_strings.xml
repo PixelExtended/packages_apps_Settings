@@ -145,4 +145,7 @@ Notifications may be delayed for these apps."</string>
     <string name="fod_recog_animation_coloros7_1">ColorOS7 1</string>
     <string name="fod_recog_animation_coloros7_2">ColorOS7 2</string>
 
+    <string name="auto_brightness_min_title">Minimal brightness level</string>
+    <string name="auto_brightness_description_new">Your screen brightness will automatically adjust to your environment and activities.\n\nYou can adjust a minimal brightness level that will be used.</string>
+
 </resources>
