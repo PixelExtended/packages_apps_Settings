@@ -11441,5 +11441,8 @@
     <string name="rtt_settings_visible_during_call"></string>
     <!-- Subtext for showing the option of RTT setting. [CHAR LIMIT=NONE] -->
     <string name="rtt_settings_always_visible"></string>
+    
+    <string name="auto_brightness_min_title">Minimal brightness level</string>
+    <string name="auto_brightness_description_new">Your screen brightness will automatically adjust to your environment and activities.\n\nYou can adjust a minimal brightness level that will be used.</string>
 
 </resources>
