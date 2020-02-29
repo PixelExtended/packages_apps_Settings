@@ -82,5 +82,11 @@
         android:title="@string/fullscreen_gestures_title"
         android:summary="@string/fullscreen_gestures_summary"
         android:defaultValue="false" />
+
+        <Preference
+            android:key="gesture_nav_custom_options"
+            android:title="@string/navbar_gesture_tweaks_pref_title"
+            android:summary="@string/navbar_gesture_tweaks_pref_summary"
+            android:fragment="com.android.settings.gestures.GestureTweaksSettings" />
 </PreferenceScreen>
 
