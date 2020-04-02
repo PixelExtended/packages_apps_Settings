@@ -3376,6 +3376,14 @@
                        android:value="com.android.settings.gestures.DeviceControlsSettings" />
         </activity>
 
+        <!-- Corvus Team dialog -->
+        <activity android:name="com.raven.lair.fragments.team.TeamActivity"
+                  android:taskAffinity=""
+                  android:parentActivityName="Settings"
+                  android:theme="@style/TeamDialog"
+                  android:label="@string/dialog_team_title" />
+
+        <!-- Navbar -->
         <activity
             android:name="Settings$GestureNavigationSettingsActivity"
             android:label="@string/gesture_settings_activity_title"
