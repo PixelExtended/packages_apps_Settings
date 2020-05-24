@@ -65,6 +65,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final int PULLDOWN_DIR_RIGHT = 1;
     private static final int PULLDOWN_DIR_LEFT = 2;
 
+    private static final String NETWORK_TRAFFIC_SETTINGS = "network_traffic_settings";
+
     private SystemSettingListPreference mQuickPulldown;
     private SystemSettingListPreference mStatusBarClock;
     private SystemSettingListPreference mStatusBarAmPm;
@@ -80,6 +82,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private PreferenceCategory mStatusBarClockCategory;
     private PreferenceCategory mStatusBarBrightnessCategory;
     private PreferenceCategory mStatusBarQsAnimationCategory;
+    private PreferenceScreen mNetworkTrafficPref;
 
     private static boolean sHasCenteredNotch;
 
@@ -88,7 +91,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.status_bar_settings);
 
+        mNetworkTrafficPref = findPreference(NETWORK_TRAFFIC_SETTINGS);
+
         sHasCenteredNotch = CutoutUtils.hasCenteredCutout(getActivity());
+
+        if (sHasCenteredNotch) {
+            getPreferenceScreen().removePreference(mNetworkTrafficPref);
+        }
 
         mStatusBarAmPm =
                 (SystemSettingListPreference) findPreference(STATUS_BAR_AM_PM);
@@ -162,7 +171,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
         }
 
-        final boolean disallowCenteredClock = sHasCenteredNotch;
+        final boolean disallowCenteredClock = sHasCenteredNotch || getNetworkTrafficStatus() != 0;
 
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
@@ -182,6 +191,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
         }
+
+        // Disable network traffic preferences if clock is centered in the status bar
+        updateNetworkTrafficStatus(getClockPosition());
     }
 
     @Override
@@ -191,6 +203,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         switch (key) {
             case STATUS_BAR_QUICK_QS_PULLDOWN:
                 updateQuickPulldownSummary(value);
+                break;
+            case STATUS_BAR_CLOCK_STYLE:
+                updateNetworkTrafficStatus(value);
                 break;
             case STATUS_BAR_BATTERY_STYLE:
                 enableStatusBarBatteryDependents(value);
@@ -229,6 +244,25 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 break;
         }
         mQuickPulldown.setSummary(summary);
+    }
+
+    private void updateNetworkTrafficStatus(int clockPosition) {
+        if (sHasCenteredNotch) {
+            // Unconditional no network traffic for you
+            return;
+        }
+
+        boolean isClockCentered = clockPosition == 1;
+        mNetworkTrafficPref.setEnabled(!isClockCentered);
+        mNetworkTrafficPref.setSummary(getResources().getString(isClockCentered ?
+                R.string.network_traffic_disabled_clock :
+                R.string.network_traffic_settings_summary
+        ));
+    }
+
+    private int getNetworkTrafficStatus() {
+        return Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_MODE, 0);
     }
 
     private int getClockPosition() {
