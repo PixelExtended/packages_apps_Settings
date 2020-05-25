@@ -379,8 +379,13 @@
     <string name="smart_charging_resume_level_title">Start trigger level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery</string>
 
-<!-- QS blur -->
+    <!-- QS blur -->
     <string name="blur_quicksettings_title">Blur behind quick settings</string>
     <string name="blur_quicksettings_summary">Blurs the darkened background behind quick settings</string>
+
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">FP unlock</string>
+    <string name="fp_unlock_keystore_summary">Unlock with fingerprint even after a reboot without PIN/Password/Pattern\nNote: Use at your own risk!</string>
+
 </resources>
 

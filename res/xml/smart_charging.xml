@@ -21,12 +21,12 @@
     android:key="smart_charging_screen"
     android:title="@string/smart_charging_title">
 
-    <com.bootleggers.custom.preferences.SystemSettingSwitchPreference
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="smart_charging"
         android:title="@string/smart_charging_switch_title"
         android:defaultValue="false" />
 
-    <com.bootleggers.custom.preferences.CustomSeekBarPreference
+    <com.android.settings.custom.preference.CustomSeekBarPreference
         android:key="smart_charging_level"
         android:title="@string/smart_charging_level_title"
         android:max="100"
@@ -35,7 +35,7 @@
         android:defaultValue="80"
         android:dependency="smart_charging" />
 
-    <com.bootleggers.dumpster.preferences.CustomSeekBarPreference
+     <com.android.settings.custom.preference.CustomSeekBarPreference
         android:key="smart_charging_resume_level"
         android:title="@string/smart_charging_resume_level_title"
         android:max="99"
