@@ -377,5 +377,9 @@
     <string name="smart_charging_switch_title">Use Smart charging</string>
     <string name="smart_charging_level_title">Trigger level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery</string>
+
+<!-- QS blur -->
+    <string name="blur_quicksettings_title">Blur behind quick settings</string>
+    <string name="blur_quicksettings_summary">Blurs the darkened background behind quick settings</string>
 </resources>
 

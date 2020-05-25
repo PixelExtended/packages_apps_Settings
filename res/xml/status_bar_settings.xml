@@ -168,6 +168,12 @@
             android:summary="@string/notification_headers_summary"
             android:defaultValue="false" />
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="qs_blur"
+            android:title="@string/blur_quicksettings_title"
+            android:summary="@string/blur_quicksettings_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
