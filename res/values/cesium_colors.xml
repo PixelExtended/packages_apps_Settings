@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 The CesiumOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <!-- DashBoard Custom Colors -->
+    <color name="dashboard_cesium_privacy">#1E5E97F6</color>
+    <color name="dashboard_cesium_network">#1E2196F3</color>
+    <color name="dashboard_cesium_devices">#1E72B70F</color>
+    <color name="dashboard_cesium_apps">#1EFF7E0F</color>
+    <color name="dashboard_cesium_about">#1E6F86DA</color>
+    <color name="dashboard_cesium_location">#1E2EC7DC</color>
+    <color name="dashboard_cesium_battery">#1E258982</color>
+    <color name="dashboard_cesium_display">#1EFFA727</color>
+    <color name="dashboard_cesium_sound">#1E01B1AF</color>
+    <color name="dashboard_cesium_storage">#1EC14CE6</color>
+    <color name="dashboard_cesium_security">#1E0F9D58</color>
+    <color name="dashboard_cesium_accounts">#1EF15B8D</color>
+    <color name="dashboard_cesium_accessibility">#1E783BE5</color>
+    <color name="dashboard_cesium_info">#1E9E9E9E</color>
+
+</resources> 
