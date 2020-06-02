@@ -22,6 +22,12 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!-- logo -->
+    <PreferenceScreen
+        android:key="custom_logo"
+        android:enabled="false"
+        android:layout="@layout/custom_logo" />
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
