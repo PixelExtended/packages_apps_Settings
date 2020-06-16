@@ -150,7 +150,8 @@
     <string name="additional_buttons_title">Additional buttons</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_title">Device Customisation</string>
+    <string name="status_bar_title_summary">Essential ROM Features Cherry-Picked For You</string> 
     <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
     <string name="status_bar_quick_qs_pulldown_summary_left_edge">Left edge of the status bar pulls down Quick Settings</string>
     <string name="status_bar_quick_qs_pulldown_summary_right_edge">Right edge of the status bar pulls down Quick Settings</string>
