@@ -80,6 +80,12 @@
             android:title="@string/power_menu_title"
             android:fragment="com.android.settings.custom.buttons.PowerMenuActions" />
 
+       <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/advanced_reboot_title"
+            android:summary="@string/advanced_reboot_summary"
+            android:defaultValue="true" />
+
         <SwitchPreference
             android:key="power_end_call"
             android:title="@string/power_end_call_title"
