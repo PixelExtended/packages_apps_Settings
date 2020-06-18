@@ -129,6 +129,12 @@
             android:key="quick_settings_vibrate"
             android:title="@string/qs_vibrate_title"
             android:summary="@string/qs_vibrate_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="tint_qs_tiles"
+            android:title="@string/tint_qs_tiles_title"
+            android:summary="@string/tint_qs_tiles_summary"
             android:defaultValue="false" />
 
         <com.android.settings.custom.preference.SystemSettingListPreference
