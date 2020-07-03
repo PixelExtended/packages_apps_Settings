@@ -29,6 +29,12 @@
         android:fragment="com.android.settings.language.LanguageAndInputSettings"
         settings:controller="com.android.settings.language.LanguageAndInputPreferenceController"/>
 
+    <!-- bliss Logo Header -->
+    <Preference 
+        android:key="bliss_logo"
+        android:order="-500"
+        android:layout="@layout/system_animation" />
+
     <Preference
         android:key="gesture_settings"
         android:title="@string/gesture_preference_title"
