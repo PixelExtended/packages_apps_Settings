@@ -95,25 +95,23 @@ public class MobileNetworkSwitchController extends BasePreferenceController impl
         if (mSwitchBar == null) {
             return;
         }
+        final List<SubscriptionInfo> subs = SubscriptionUtil.getAvailableSubscriptions(
+                mContext);
+        if (mSubId == SubscriptionManager.INVALID_SUBSCRIPTION_ID ||
+                mSubscriptionManager.isSubscriptionEnabled(mSubId) && subs.size() < 2) {
+            mSwitchBar.hide();
+            return;
+        }
 
-        SubscriptionInfo subInfo = null;
-        for (SubscriptionInfo info : SubscriptionUtil.getAvailableSubscriptions(mContext)) {
+        for (SubscriptionInfo info : subs) {
             if (info.getSubscriptionId() == mSubId) {
-                subInfo = info;
-                break;
+                mSwitchBar.show();
+                mSwitchBar.setChecked(mSubscriptionManager.isSubscriptionEnabled(mSubId));
+                return;
             }
         }
-
-        // For eSIM, we always want the toggle. The telephony stack doesn't currently support
-        // disabling a pSIM directly (b/133379187), so we for now we don't include this on pSIM.
-        if (subInfo == null || !subInfo.isEmbedded()) {
-            mSwitchBar.hide();
-        } else {
-            mSwitchBar.show();
-            // TODO b/135222940: re-evaluate whether to use
-            // mSubscriptionManager#isSubscriptionEnabled
-            mSwitchBar.setChecked(mSubscriptionManager.isActiveSubId(mSubId));
-        }
+        // This subscription was not found in the available list.
+        mSwitchBar.hide();
     }
 
     @Override

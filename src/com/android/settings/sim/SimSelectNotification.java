@@ -136,7 +136,7 @@ public class SimSelectNotification extends BroadcastReceiver {
         }
 
         CharSequence notificationSummary = context.getResources().getString(
-                R.string.enable_mms_notification_summary, SubscriptionUtil.getDisplayName(info));
+                R.string.enable_mms_notification_summary, tm.getSimOperatorName());
 
         cancelEnableMmsNotification(context);
 
