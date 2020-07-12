@@ -122,7 +122,7 @@
     <string name="others_settings_title">Otros ajustes</string>
     <string name="additional_buttons_title">Botones adicionales</string>
     <!-- Status bar -->
-    <string name="status_bar_title">Barra de estado</string>
+    <string name="status_bar_title">Personalización</string>
     <string name="status_bar_quick_qs_pulldown_title">Desplegado rápido</string>
     <string name="status_bar_quick_qs_pulldown_summary_left_edge">El borde izquierdo de la barra de notificaciones despliega los ajustes rápidos</string>
     <string name="status_bar_quick_qs_pulldown_summary_right_edge">El borde derecho de la barra de notificaciones despliega hacia abajo los ajustes rápidos</string>
