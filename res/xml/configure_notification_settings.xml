@@ -119,6 +119,13 @@
             android:key="battery_light_enabled"
             android:title="@string/battery_light_title"
             settings:controller="com.android.settings.notification.BatteryLightPreferenceController"/>
+	
+     <!-- Notification Counters -->
+      <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="status_bar_notif_count"
+        android:title="@string/notif_count_title"
+        android:summary="@string/notif_count_summary"
+        android:defaultValue="true" />
 
         <!-- Default notification ringtone -->
         <com.android.settings.DefaultRingtonePreference

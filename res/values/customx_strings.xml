@@ -436,5 +436,8 @@
     <string name="switch_md2">MD2</string>
     <string name="switch_retro">Retro</string>
 
+<!-- StatusBar notification count -->
+    <string name="notif_count_title">Notification count</string>
+    <string name="notif_count_summary">Show notification count near notfication icons</string>
 </resources>
 
