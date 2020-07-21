@@ -20,12 +20,12 @@
     android:orientation="horizontal" >
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/wifi_connection"
+        android:id="@+id/about_lottie"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:clickable="false"
-        app:lottie_rawRes="@raw/wifi"
+        app:lottie_rawRes="@raw/about"
         app:lottie_loop="true"
         app:lottie_autoPlay="true" />
 
