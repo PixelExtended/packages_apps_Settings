@@ -146,5 +146,5 @@
         android:layout_marginStart="12dp"
         android:text="@string/back_block_ime_title"
         android:textAppearance="?android:attr/textAppearance"
-        style="@android:style/TextAppearance.DeviceDefault.Subhead" />
+        style="@*android:style/TextAppearance.DeviceDefault.Subhead" />
 </LinearLayout>
