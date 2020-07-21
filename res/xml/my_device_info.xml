@@ -27,6 +27,11 @@
         android:layout="@layout/settings_entity_header"
         android:selectable="false"
         settings:isPreferenceVisible="false"/>
+   
+   <Preference
+        android:key="about_animation"
+        android:layout="@layout/about_animation" />
+
 
     <!-- Device name -->
     <com.android.settings.widget.ValidatedEditTextPreference
