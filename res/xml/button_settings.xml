@@ -120,6 +120,13 @@
         android:key="volume_keys"
         android:title="@string/hardware_keys_volume_keys_title" >
 
+       <com.android.settings.custom.preference.SystemSettingListPreference
+            android:key="systemui_plugin_volume"
+            android:title="@string/volume_panel"
+            android:entries="@array/volume_panel_entries"
+            android:entryValues="@array/volume_panel_values"
+            android:defaultValue="@string/volume_panel_aosp_val" />
+
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="volume_wake_screen"
             android:title="@string/button_wake_title"
