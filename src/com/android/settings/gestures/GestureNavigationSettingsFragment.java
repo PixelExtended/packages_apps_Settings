@@ -16,11 +16,17 @@
 
 package com.android.settings.gestures;
 
+import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL_OVERLAY;
+import static android.os.UserHandle.USER_CURRENT;
+
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.om.IOverlayManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.provider.Settings;
 import android.view.WindowManager;
 
@@ -43,7 +49,14 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
     private static final String LEFT_EDGE_SEEKBAR_KEY = "gesture_left_back_sensitivity";
     private static final String RIGHT_EDGE_SEEKBAR_KEY = "gesture_right_back_sensitivity";
+    private static final String GESTURE_BAR_LENGTH_KEY = "gesture_navbar_length";
     private static final String KEY_BACK_HEIGHT = "gesture_back_height";
+
+    private static final String LONG_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.long";
+    private static final String MEDIUM_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.medium";
+    private static final String HIDDEN_OVERLAY_PKG = "com.custom.overlay.systemui.gestural.hidden";
+
+    private IOverlayManager mOverlayService;
 
     private WindowManager mWindowManager;
     private BackGestureIndicatorView mIndicatorView;
@@ -64,6 +77,8 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         mIndicatorView = new BackGestureIndicatorView(getActivity());
         mWindowManager = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
+        mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
     }
 
     @Override
@@ -78,6 +93,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         initSeekBarPreference(LEFT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(RIGHT_EDGE_SEEKBAR_KEY);
+        initSeekBarPreference(GESTURE_BAR_LENGTH_KEY);
         initSeekBarPreference(KEY_BACK_HEIGHT);
     }
 
@@ -121,15 +137,30 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         final LabeledSeekBarPreference pref = getPreferenceScreen().findPreference(key);
         pref.setContinuousUpdates(true);
 
-        final String settingsKey = key == LEFT_EDGE_SEEKBAR_KEY ?
-                Settings.Secure.BACK_GESTURE_INSET_SCALE_LEFT
-                : key == RIGHT_EDGE_SEEKBAR_KEY ?
-                Settings.Secure.BACK_GESTURE_INSET_SCALE_RIGHT
-                : Settings.System.BACK_GESTURE_HEIGHT;
+        String settingsKey;
 
-
-        float initScale = Settings.Secure.getFloat(
-                getContext().getContentResolver(), settingsKey, 1.0f);
+        switch(key) {
+            case LEFT_EDGE_SEEKBAR_KEY:
+                settingsKey = Settings.Secure.BACK_GESTURE_INSET_SCALE_LEFT;
+                break;
+            case RIGHT_EDGE_SEEKBAR_KEY:
+                settingsKey = Settings.Secure.BACK_GESTURE_INSET_SCALE_RIGHT;
+                break;
+            case GESTURE_BAR_LENGTH_KEY:
+                settingsKey = Settings.Secure.GESTURE_NAVBAR_LENGTH;
+                break;
+            case KEY_BACK_HEIGHT:
+                settingsKey = Settings.System.BACK_GESTURE_HEIGHT;
+                break;
+            default:
+                settingsKey = "";
+                break;
+        }
+        float initScale = 0;
+        if (settingsKey != "") {
+            initScale = Settings.Secure.getFloat(
+                  getContext().getContentResolver(), settingsKey, 1.0f);
+        }
 
         // needed if we just change the height
         float currentWidthScale = Settings.Secure.getFloat(
@@ -147,51 +178,97 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         // Find the closest value to initScale
         float minDistance = Float.MAX_VALUE;
-        int minDistanceIndex = -1;
-        for (int i = 0; i < mBackGestureInsetScales.length; i++) {
-            float d = Math.abs(mBackGestureInsetScales[i] - initScale);
-            if (d < minDistance) {
-                minDistance = d;
-                minDistanceIndex = i;
+        int minDistanceIndex = key == GESTURE_BAR_LENGTH_KEY ? (int) initScale : -1;
+        if (key != GESTURE_BAR_LENGTH_KEY) {
+            for (int i = 0; i < mBackGestureInsetScales.length; i++) {
+                float d = Math.abs(mBackGestureInsetScales[i] - initScale);
+                if (d < minDistance) {
+                    minDistance = d;
+                    minDistanceIndex = i;
+                }
             }
         }
+
         pref.setProgress(minDistanceIndex);
 
-        pref.setOnPreferenceChangeListener((p, v) -> {
-            if (key != KEY_BACK_HEIGHT) {
-                final int width = (int) (mDefaultBackGestureInset * mBackGestureInsetScales[(int) v]);
-                mIndicatorView.setIndicatorWidth(width, key == LEFT_EDGE_SEEKBAR_KEY);
-                if (key == LEFT_EDGE_SEEKBAR_KEY) {
-                    mCurrentLefttWidth = width;
+        if (key != GESTURE_BAR_LENGTH_KEY) {
+            pref.setOnPreferenceChangeListener((p, v) -> {
+                if (key != KEY_BACK_HEIGHT) {
+                    final int width = (int) (mDefaultBackGestureInset * mBackGestureInsetScales[(int) v]);
+                    mIndicatorView.setIndicatorWidth(width, key == LEFT_EDGE_SEEKBAR_KEY);
+                    if (key == LEFT_EDGE_SEEKBAR_KEY) {
+                        mCurrentLefttWidth = width;
+                    } else {
+                        mCurrentRightWidth = width;
+                    }
                 } else {
-                    mCurrentRightWidth = width;
+                    final int heightScale = (int) (mBackGestureInsetScales[(int) v]);
+                    mIndicatorView.setIndicatorHeightScale(heightScale);
+                    // dont use updateViewLayout else it will animate
+                    mWindowManager.removeView(mIndicatorView);
+                    mWindowManager.addView(mIndicatorView, mIndicatorView.getLayoutParams(
+                            getActivity().getWindow().getAttributes()));
+                    // peek the indicators
+                    mIndicatorView.setIndicatorWidth(mCurrentRightWidth, false);
+                    mIndicatorView.setIndicatorWidth(mCurrentLefttWidth, true);
                 }
-            } else {
-                final int heightScale = (int) (mBackGestureInsetScales[(int) v]);
-                mIndicatorView.setIndicatorHeightScale(heightScale);
-                // dont use updateViewLayout else it will animate
-                mWindowManager.removeView(mIndicatorView);
-                mWindowManager.addView(mIndicatorView, mIndicatorView.getLayoutParams(
-                        getActivity().getWindow().getAttributes()));
-                // peek the indicators
-                mIndicatorView.setIndicatorWidth(mCurrentRightWidth, false);
-                mIndicatorView.setIndicatorWidth(mCurrentLefttWidth, true);
-            }
-            return true;
-        });
+                return true;
+            });
 
-        pref.setOnPreferenceChangeStopListener((p, v) -> {
-            final float scale = mBackGestureInsetScales[(int) v];
-            if (key == KEY_BACK_HEIGHT) {
-                mIndicatorView.setIndicatorWidth(0, false);
-                mIndicatorView.setIndicatorWidth(0, true);
-                Settings.System.putInt(getContext().getContentResolver(), settingsKey, (int) scale);
-            } else {
-                mIndicatorView.setIndicatorWidth(0, key == LEFT_EDGE_SEEKBAR_KEY);
-                Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, scale);
-            }
-            return true;
-        });
+            pref.setOnPreferenceChangeStopListener((p, v) -> {
+                final float scale = mBackGestureInsetScales[(int) v];
+                if (key == KEY_BACK_HEIGHT) {
+                    mIndicatorView.setIndicatorWidth(0, false);
+                    mIndicatorView.setIndicatorWidth(0, true);
+                    Settings.System.putInt(getContext().getContentResolver(), settingsKey, (int) scale);
+                } else {
+                    mIndicatorView.setIndicatorWidth(0, key == LEFT_EDGE_SEEKBAR_KEY);
+                    Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, scale);
+                }
+                return true;
+            });
+        } else {
+            pref.setOnPreferenceChangeListener((p, v) -> {
+                switch((int) v) {
+                    case 0:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(HIDDEN_OVERLAY_PKG, USER_CURRENT);
+                            mOverlayService.setEnabled(LONG_OVERLAY_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(MEDIUM_OVERLAY_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 1:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabled(LONG_OVERLAY_PKG, false, USER_CURRENT);
+                            mOverlayService.setEnabled(MEDIUM_OVERLAY_PKG, false, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 2:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(MEDIUM_OVERLAY_PKG, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                    case 3:
+                        try {
+                            mOverlayService.setEnabledExclusiveInCategory(NAV_BAR_MODE_GESTURAL_OVERLAY, USER_CURRENT);
+                            mOverlayService.setEnabledExclusiveInCategory(LONG_OVERLAY_PKG, USER_CURRENT);
+                        } catch (RemoteException re) {
+                            throw re.rethrowFromSystemServer();
+                        }
+                        break;
+                }
+                Settings.Secure.putFloat(getContext().getContentResolver(), settingsKey, (int) v);
+                return true;
+            });
+        }
     }
 
     private static float[] getFloatArray(TypedArray array) {
