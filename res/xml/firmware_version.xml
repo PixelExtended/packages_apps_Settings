@@ -21,6 +21,11 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!-- logo -->
+    <Preference
+        android:key="pex_anim"
+        android:layout="@layout/pex_anim" />
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
