@@ -27,7 +27,15 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java",
+           "RavenLair/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.raven.lair"],
+
+    resource_dirs: ["res",
+                    "RavenLair/res"
+    ],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -64,6 +72,10 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+
+    optimize: {
+        proguard_flags_files: ["proguard-core.flags"],
+    },
 }
 
 platform_compat_config {
