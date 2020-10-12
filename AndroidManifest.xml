@@ -3406,5 +3406,20 @@
         </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
+
+        <!-- Start of our manifest entries -->
+
+        <!-- Raven Lair -->
+        <activity android:name=".Settings$RavenLairActivity"
+                  android:label="@string/ravenlair_title"
+                  android:icon="@drawable/ic_settings_ravenlair"
+                  android:parentActivityName="com.android.settings">
+            <intent-filter android:priority="69">
+                  <action android:name="android.intent.action.MAIN" />    
+                  <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+                  <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                   android:value="com.raven.lair.RavenLair"/>
+        </activity>
     </application>
 </manifest>
