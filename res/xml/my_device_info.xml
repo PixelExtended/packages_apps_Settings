@@ -61,6 +61,15 @@
         settings:enableCopying="true"/>
 
     <Preference
+            android:title="@string/radio_info_title"
+            android:key="radio_info_settings"
+            android:order="15">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.phone"
+                android:targetClass="com.android.phone.settings.RadioInfo" />
+    </Preference>
+
+    <Preference
         android:key="emergency_info"
         android:order="14"
         android:title="@string/emergency_info_title"
