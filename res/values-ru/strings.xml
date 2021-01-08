@@ -5139,4 +5139,12 @@
     <string name="media_controls_no_players" msgid="3493023121892175946">"Нет доступных проигрывателей"</string>
     <string name="keywords_media_controls" msgid="8345490568291778638">"Медиа"</string>
     <string name="connected_device_see_all_summary" msgid="2056010318537268108">"Будет включен модуль Bluetooth"</string>
+    <!-- Theming category in Screen settings -->
+    <string name="theme_customization_category">Темы</string>
+    <string name="theme_customization_accent_color_title">Цвет акцента</string>
+    <string name="theme_customization_primary_color_title">Основной цвет</string>
+    <string name="theme_customization_font_title">Шрифт заголовка/системы</string>
+    <string name="theme_customization_icon_shape_title">Форма значка</string>
+    <string name="theme_customization_sysui_icon_title">Значок в строке состояния</string>
+    <string name="theme_customization_device_default">По умолчанию для этого устройства</string>
 </resources>
