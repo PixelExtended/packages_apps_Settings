@@ -66,6 +66,7 @@ aaptflags: ["--extra-packages com.raven.lair"],
         "faceunlock_framework",
         "vendor.lineage.fastcharge-V1.0-java",
         "lottie",
+        "vendor.aosp.smartcharge-V1.0-java"
     ],
 
     libs: [
