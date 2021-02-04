@@ -249,34 +249,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(appSwitchCategory);
         }
 
-        if (hasCameraKey) {
-            mCameraWakeScreen = findPreference(Settings.System.CAMERA_WAKE_SCREEN);
-            mCameraSleepOnRelease = findPreference(Settings.System.CAMERA_SLEEP_ON_RELEASE);
-            mCameraLaunch = findPreference(Settings.System.CAMERA_LAUNCH);
-
-            if (!showCameraWake) {
-                prefScreen.removePreference(mCameraWakeScreen);
-            }
-            // Only show 'Camera sleep on release' if the device has a focus key
-            if (res.getBoolean(com.android.internal.R.bool.config_singleStageCameraKey)) {
-                prefScreen.removePreference(mCameraSleepOnRelease);
-            }
-        }
-        if (!hasCameraKey || cameraCategory.getPreferenceCount() == 0) {
-            prefScreen.removePreference(cameraCategory);
-        }
-
         final ButtonBacklightBrightness backlight = findPreference(KEY_BUTTON_BACKLIGHT);
         if (!ButtonSettingsUtils.hasButtonBacklightSupport(getActivity())
                 && !ButtonSettingsUtils.hasKeyboardBacklightSupport(getActivity())) {
             prefScreen.removePreference(backlight);
-        }
-
-        if (mCameraWakeScreen != null) {
-            if (mCameraSleepOnRelease != null && !res.getBoolean(
-                    com.android.internal.R.bool.config_singleStageCameraKey)) {
-                mCameraSleepOnRelease.setDependency(Settings.System.CAMERA_WAKE_SCREEN);
-            }
         }
 
         mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
