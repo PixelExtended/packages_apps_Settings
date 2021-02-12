@@ -133,4 +133,14 @@
     <string name="navbar_length">Gesture bar length</string>
     <string name="long_label">Long</string>
     <string name="hidden_label">Hidden</string>
+
+    <!-- Switch Styles -->
+    <string name="switch_style_title">Switch Style</string>
+    <string name="switch_default">Default</string>
+    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_narrow">Narrow</string>
+    <string name="switch_contained">Contained</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">MD2</string>
+    <string name="switch_retro">Retro</string>
 </resources>
