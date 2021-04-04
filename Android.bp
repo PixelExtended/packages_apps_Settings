@@ -64,7 +64,7 @@ android_library {
         "zxing-core-1.7",
         "android.hardware.dumpstate-V1.0-java",
         "android.hardware.dumpstate-V1.1-java",
-        "VendorSupport-preference",
+        "custom-preference",
         "airbnb-lottie",
         "vendor.lineage.fastcharge-V1.0-java",
         "faceunlock_framework",
