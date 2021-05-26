@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2019 The PixelExperience Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,19 @@
 
 package com.android.settings.gestures;
 
-import static android.provider.Settings.System.THREE_FINGER_GESTURE;
-
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.provider.Settings;
-import android.text.TextUtils;
+import android.os.UserHandle;
+
+import com.android.settings.R;
 
 public class SwipeToScreenshotPreferenceController extends GesturePreferenceController {
 
-    private final int ON = 1;
-    private final int OFF = 0;
+private static final String PREF_KEY_VIDEO = "swipe_to_screenshot_video";
 
-    private static final String PREF_KEY_VIDEO = "swipe_to_screenshot_video";
-
-    public SwipeToScreenshotPreferenceController(Context context, String key) {
+    public SwipeToScreenshotPreferenceController(Context context,
+            String key) {
         super(context, key);
     }
 
@@ -40,23 +38,28 @@ public class SwipeToScreenshotPreferenceController extends GesturePreferenceCont
     }
 
     @Override
-    public boolean isSliceable() {
-        return TextUtils.equals(getPreferenceKey(), "swipe_to_screenshot");
-    }
-
-    @Override
     protected String getVideoPrefKey() {
         return PREF_KEY_VIDEO;
     }
 
     @Override
     public boolean setChecked(boolean isChecked) {
-        return Settings.System.putInt(mContext.getContentResolver(), THREE_FINGER_GESTURE,
-                isChecked ? ON : OFF);
+        return true;
     }
 
     @Override
     public boolean isChecked() {
-        return Settings.System.getInt(mContext.getContentResolver(), THREE_FINGER_GESTURE, 0) != 0;
+        return true;
+    }
+
+    private boolean isSwipeToScreenshotGestureEnabled() {
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.SWIPE_TO_SCREENSHOT, 0, UserHandle.USER_CURRENT) != 0;
+    }
+
+    @Override
+    public CharSequence getSummary() {
+        return mContext.getText(
+                isSwipeToScreenshotGestureEnabled() ? R.string.gesture_setting_on : R.string.gesture_setting_off);
     }
 }
