@@ -16,18 +16,29 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.SystemProperties;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+
+import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
-
 public class PexVersionPreferenceController extends BasePreferenceController {
 
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/PixelExtended/OTA/blob/eleven/changelog.md");
+    private static final String TAG = "PexCtrl";
     private static final String PROPERTY_PEX_VERSION = "org.pex.version";
+
+    private final PackageManager mPackageManager;
 
     public PexVersionPreferenceController(Context context, String key) {
         super(context, key);
+    mPackageManager = mContext.getPackageManager();
     }
 
     @Override
@@ -40,5 +51,24 @@ public class PexVersionPreferenceController extends BasePreferenceController {
     public CharSequence getSummary() {
         return SystemProperties.get(PROPERTY_PEX_VERSION,
                 mContext.getString(R.string.unknown));
+    }
+
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
+            return false;
+        }
+
+        final Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(INTENT_URI_DATA);
+        if (mPackageManager.queryIntentActivities(intent, 0).isEmpty()) {
+            // Don't send out the intent to stop crash
+            Log.w(TAG, "queryIntentActivities() returns empty");
+            return true;
+        }
+
+        mContext.startActivity(intent);
+        return true;
     }
 }
