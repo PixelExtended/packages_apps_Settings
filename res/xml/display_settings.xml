@@ -122,11 +122,6 @@
         android:summary="@string/peak_refresh_rate_summary"
         settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController" />
 
-    <com.android.settings.display.FontDialogPreference
-        android:key="custom_font"
-        android:title="@string/font_picker_title"
-        android:persistent="false" />
-
     <Preference
         android:key="font_size"
         android:title="@string/title_font_size"
@@ -232,6 +227,11 @@
         <ListPreference
             android:key="android.theme.customization.icon_pack.android"
             android:title="@string/theme_customization_sysui_icon_title"/>
+
+	<com.android.settings.display.FontDialogPreference
+            android:key="custom_font"
+            android:title="@string/font_picker_title"
+            android:persistent="false" />
 
         <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="switch_style"
