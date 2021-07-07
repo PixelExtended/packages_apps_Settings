@@ -26,7 +26,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.RemoteException;
 import android.provider.Settings.Global;
 import android.text.format.Formatter;
 import android.view.Menu;
@@ -57,10 +56,7 @@ import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 import com.android.settingslib.widget.LayoutPreference;
 
-import vendor.aosp.smartcharge.V1_0.ISmartCharge;
-
 import java.util.List;
-import java.util.NoSuchElementException;
 
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was consumed
@@ -76,8 +72,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     private static final String KEY_SCREEN_USAGE = "screen_usage";
     private static final String KEY_TIME_SINCE_LAST_FULL_CHARGE = "last_full_charge";
-
-    private ISmartCharge mSmartCharge = null;
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -236,18 +230,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         }
         mBatteryTipPreferenceController.restoreInstanceState(icicle);
         updateBatteryTipFlag(icicle);
-    }
-  
-    private synchronized ISmartCharge getSmartCharge() {
-        try {
-            return ISmartCharge.getService();
-        } catch (RemoteException ex) {
-            ex.printStackTrace();
-        } catch (NoSuchElementException ex) {
-            // service not available
-        }
-
-        return null;
     }
 
     @Override
