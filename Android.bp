@@ -27,16 +27,12 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: ["src/**/*.java", "src/**/*.kt", "RavenLair/src/**/*.java"],
+
+aaptflags: ["--extra-packages com.raven.lair"],
 
     resource_dirs: ["res",
                     "TouchGestures/res",
-           "RavenLair/src/**/*.java"
-    ],
-
-    aaptflags: ["--extra-packages com.raven.lair"],
-
-    resource_dirs: ["res",
                     "RavenLair/res"
     ],
 

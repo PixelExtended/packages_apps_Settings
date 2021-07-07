@@ -54,7 +54,7 @@ import com.android.internal.custom.hardware.LiveDisplayManager;
 import com.android.settings.custom.utils.SettingsHelper;
 import com.android.settings.custom.utils.ResourceUtils;
 
-import com.android.settings.custom.preference.CustomDialogPreference;
+import com.raven.lair.buttons.CustomDialogPreference;
 
 import com.android.settings.custom.preference.SystemSettingSwitchPreference;
 
