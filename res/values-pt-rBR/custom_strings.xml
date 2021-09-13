@@ -89,4 +89,68 @@
     <string name="face_unlock_method_title">Permitir o desbloqueio facial na tela de bloqueio</string>
     <string name="face_unlock_method_default">Quando a tela estiver ligada</string>
     <string name="face_unlock_method_swipe">Quando deslizar na tela de bloqueio</string>
+
+    <!-- Refresh rate -->
+    <string name="min_refresh_rate_title">Taxa mínima de atualização</string>
+    <string name="max_refresh_rate_title">Taxa máxima de atualização</string>
+    <string name="battery_saver_refresh_rate_title">Reduza a taxa de atualização</string>
+    <string name="battery_saver_refresh_rate_summary">Use 60 Hz como taxa de atualização máxima para economizar energia quando a Economia de bateria estiver ativada</string>
+
+    <!-- Misc gesture settings -->
+    <string name="back_gesture_haptic_title">Feedback tátil</string>
+    <string name="back_gesture_haptic_summary">Ativar efeito de tique tátil no gesto voltar</string>
+
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+
+    <!-- Navbar length -->
+    <string name="navbar_length">Comprimento da barra de gestos</string>
+    <string name="long_label">Longo</string>
+    <string name="hidden_label">Ocultar</string>
+
+    <!-- Navbar radius -->
+    <string name="navbar_radius">Borda da barra de gestos</string>
+    <string name="small_label">1 dp</string>
+    <string name="big_label">4 dp</string>
+
+   <!-- FontEngine -->
+    <string name="font_picker_title">Fontes</string>
+    <string name="disable_fonts_installed_title">O seletor de fonte não está disponível para evitar conflitos com o substrato. Desinstale-o se desejar usar o seletor de fonte.</string>
+    <string name="font_picker_progress">Aplicando nova fonte\u2026</string>
+
+   <!-- Custom actions -->
+    <string name="action_nothing">Sem ação</string>
+    <string name="action_menu">Menu</string>
+    <string name="action_voice_search">Pesquisa por voz</string>
+    <string name="action_launch_camera">Câmera</string>
+    <string name="action_last_app">Último app</string>
+    <string name="action_app_action">Aplicativo</string>
+    <string name="kill_app">Matar aplicativo em primeiro plano</string>
+    <string name="recent_app_toggle">Mudar de aplicativo recente</string>
+
+    <!-- Long swipe gestures -->
+    <string name="navbar_gesture_tweaks_pref_title">Opções avançadas de gestos</string>
+    <string name="navbar_gesture_tweaks_pref_summary">Personalize os gestos e defina ações personalizadas</string>
+    <string name="navbar_gesture_tweaks_cat_title">Avançado</string>
+    <string name="swipe_app_select_summary">Selecione um aplicativo para iniciar com a ação ao pressionar</string>
+    <string name="long_back_swipe_timeout_title">Tempo limite de ação de deslizar longo</string>
+    <string name="left_swipe_actions_title">Ação de deslizar longa para a esquerda</string>
+    <string name="left_swipe_app_action_title">Selecione o aplicativo de deslizar longo para a esquerda</string>
+    <string name="right_swipe_actions_title">Ação de deslizar longo para a direita</string>
+    <string name="right_swipe_app_action_title">Selecione o aplicativo de deslizar longo para a direita</string>
+    <string name="left_vertical_swipe_actions_title">Ação de deslizar em L vertical para a esquerda</string>
+    <string name="left_vertical_swipe_app_action_title">Selecione o aplicativo deslizar para a esquerda vertical</string>
+    <string name="right_vertical_swipe_actions_title">Ação de deslizar em L vertical para a direita</string>
+    <string name="right_vertical_swipe_app_action_title">Selecione o aplicativo deslizar para a direita vertical</string>
+    <string name="gesture_nav_tweaks_footer_info">Para escolher uma atividade de aplicativo específica para a ação, mantenha pressionado qualquer aplicativo no seletor de aplicativos.\n\nSe o iniciador estiver aparecendo, deslize o dedo na parte inferior da tela para acionar a ação.</string>
+    <string name="back_swipe_extended_title">Ação de deslizar prolongada</string>
+    <string name="back_swipe_extended_summary">Acione a ação ao deslizar mais amplamente (mais da metade do tamanho da tela) ou deslizar em L (verticalmente mais longo o suficiente)</string>
+
+    <!-- Fp wake unlock options -->
+    <string name="fp_wake_unlock_title">Comportamento da impressão digital</string>
+    <string name="fp_wake_unlock_touch">Tocar</string>
+    <string name="fp_wake_unlock_press">Pressionar</string>
+
+     <!-- Radio Info -->
+    <string name="radio_info_title">Informação de rádio</string>
 </resources>

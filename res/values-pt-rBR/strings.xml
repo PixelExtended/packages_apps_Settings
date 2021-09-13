@@ -4381,6 +4381,18 @@
     <string name="notification_log_details_none" msgid="1090852853755089991">"nenhum"</string>
     <string name="notification_log_details_ranking_null" msgid="6607596177723101524">"O objeto de classificação está ausente."</string>
     <string name="notification_log_details_ranking_none" msgid="2484105338466675261">"O objeto de classificação não contém essa chave."</string>
+        <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Temas</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Cor de destaque</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_primary_color_title">Cor do tema escuro</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Fontes</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Formato dos ícones</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Ícones da barra de status</string>
     <string name="theme_customization_device_default" msgid="7641813022590999286">"Padrão do dispositivo"</string>
     <string name="display_cutout_emulation" msgid="1421648375408281244">"Corte da tela"</string>
     <string name="display_cutout_emulation_keywords" msgid="4506580703807358127">"corte de tela, entalhe"</string>
