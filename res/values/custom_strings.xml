@@ -113,4 +113,6 @@
     <string name="high_touch_polling_rate_title">High touch polling rate</string>
     <string name="high_touch_polling_rate_summary">Increase touchscreen polling rate</string>
 
+    <!-- PEX version in About phone -->
+    <string name="pex_version_title">Extended version</string>
 </resources>
