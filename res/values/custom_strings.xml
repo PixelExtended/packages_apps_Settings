@@ -30,4 +30,6 @@
     <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
     <string name="ambient_display_screen_off_udfps_summary">To wake up your screen and unlock, long press your under-display fingerprint sensor.</string>
 
+    <!-- PEX version in About phone -->
+    <string name="pex_version_title">Extended version</string>
 </resources>
