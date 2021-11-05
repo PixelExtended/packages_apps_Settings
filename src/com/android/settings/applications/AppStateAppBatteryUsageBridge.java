@@ -36,7 +36,7 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class AppStateAppBatteryUsageBridge extends AppStateBaseBridge {
     private static final String TAG = AppStateAppBatteryUsageBridge.class.getSimpleName();
-    static final boolean DEBUG = Build.IS_DEBUGGABLE;
+    static final boolean DEBUG = Build.IS_ENG;
 
     @VisibleForTesting
     Context mContext;
