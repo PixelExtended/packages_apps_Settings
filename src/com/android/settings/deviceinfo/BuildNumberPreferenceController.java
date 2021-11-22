@@ -84,7 +84,10 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
             "Perhaps this Android thing is not for you...",
             "Don't you have anything better to do?!",
             "This is why nobody likes you...",
-            "Are you even trying?!",};
+            "Are you even trying?!",
+            "My phone just said Im stupid,plox sar gib fix!!",
+            "You really want your phone to explode... dumbass?!",
+            };
 
     public BuildNumberPreferenceController(Context context, String key) {
         super(context, key);
