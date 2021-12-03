@@ -104,4 +104,12 @@
         android:title="@string/gesture_prevent_ringing_screen_title"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
+
+    <Preference
+            android:key="double_tap"
+            android:fragment="com.android.settings.gestures.DoubleTapAmbientSettings"
+            android:title="@string/doze_double_tap_title"
+            android:summary="@string/doze_double_tap_summary"
+            settings:userRestriction="no_ambient_display" />
+
 </PreferenceScreen>
