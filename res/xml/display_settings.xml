@@ -127,6 +127,13 @@
             android:title="@string/peak_refresh_rate_title"
             settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController" />
 
+        <com.android.settings.custom.preference.SecureSettingSwitchPreference
+            android:key="show_combined_status_bar_signal_icons"
+            android:title="@string/combined_status_bar_signal_icons"
+            android:summary="@string/combined_status_bar_signal_icons_summary"
+            settings:controller="com.android.settings.display.CombinedSignalIconsPreferenceController"
+            android:defaultValue="false" />
+
         <SwitchPreference
             android:key="touch_sensitivity"
             android:summary="@string/touch_sensitivity_summary"

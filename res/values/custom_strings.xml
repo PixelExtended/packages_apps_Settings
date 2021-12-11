@@ -166,4 +166,8 @@
     <!-- About device screen, device maintainer -->
     <string name="device_maintainer">Device maintainer</string>
     <string name="device_maintainer_summary" translatable="false">Unofficial Maintainer</string>
+
+    <!--Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">Combined signal icons</string>
+    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
 </resources>
