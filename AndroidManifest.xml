@@ -4290,8 +4290,13 @@
                   android:icon="@drawable/ic_homepage_extensions"
                   android:exported="true"
                   android:parentActivityName="com.android.settings">
+	    <intent-filter android:priority="69">
+                <action android:name="com.android.settings.SNOWHOUSE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <intent-filter>
-                <action android:name="com.android.settings.action.SETTINGS"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="org.pixelextended.snowhouse.SnowHouse"/>
