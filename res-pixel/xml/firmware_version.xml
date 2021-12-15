@@ -5,12 +5,6 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-   <!-- logo -->
-    <Preference
-        android:key="pex_anim"
-        android:layout="@layout/pex_anim"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.RomLogoPreferenceController"/>
-
     <Preference
         android:key="os_firmware_version"
         android:summary="@string/summary_placeholder"
