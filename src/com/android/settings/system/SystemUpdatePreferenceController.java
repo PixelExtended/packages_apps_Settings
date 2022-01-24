@@ -17,6 +17,7 @@ package com.android.settings.system;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.UserManager;
 import android.telephony.CarrierConfigManager;
 import android.text.TextUtils;
@@ -35,7 +36,7 @@ public class SystemUpdatePreferenceController extends BasePreferenceController {
     private static final String KEY_SYSTEM_UPDATE_SETTINGS = "system_update_settings";
 
     private static final String OTA_BUILD_TYPE_PROP = "org.pixelexperience.build_type";
-    private static final String OTA_APP_PACKAGE = "org.pixelexperience.ota";
+    private static final String OTA_APP_PACKAGE = "org.evolution.ota";
 
     private final UserManager mUm;
 
@@ -47,7 +48,7 @@ public class SystemUpdatePreferenceController extends BasePreferenceController {
     @Override
     public int getAvailabilityStatus() {
         String buildtype = SystemProperties.get(OTA_BUILD_TYPE_PROP,"unofficial");
-        if (!mUm.isAdminUser() || (!buildtype.equalsIgnoreCase("official") && !buildtype.equalsIgnoreCase("ci"))){
+        if (!mUm.isAdminUser() || !buildtype.equalsIgnoreCase("official")){
             return UNSUPPORTED_ON_DEVICE;
         }
         try {
@@ -76,7 +77,8 @@ public class SystemUpdatePreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-        CharSequence summary = mContext.getString(R.string.summary_empty);
+        CharSequence summary = mContext.getString(R.string.android_version_summary,
+                Build.VERSION.RELEASE_OR_CODENAME);
         return summary;
     }
 
