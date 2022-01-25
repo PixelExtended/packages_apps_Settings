@@ -30,7 +30,7 @@ import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 public class PexVersionPreferenceController extends BasePreferenceController {
 
-    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/PixelExtended/OTA/blob/twelve/changelog.md");
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://github.com/PixelExtended/OTA/blob/snow/changelog.md");
     private static final String TAG = "PexCtrl";
     private static final String PROPERTY_PEX_VERSION = "org.pex.version";
 
