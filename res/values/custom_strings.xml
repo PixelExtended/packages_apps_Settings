@@ -157,4 +157,9 @@
     <!-- Theme -->
     <string name="pitch_colors">Pitch black theme</string>
     <string name="pitch_colors_summary">Pitch black theme for Settings, SystemUI, etc</string>
+
+    <!-- Fp wake unlock options -->
+    <string name="fp_wake_unlock_title">Fingerprint behaviour</string>
+    <string name="fp_wake_unlock_touch">Touch</string>
+    <string name="fp_wake_unlock_press">Press</string>
 </resources>
