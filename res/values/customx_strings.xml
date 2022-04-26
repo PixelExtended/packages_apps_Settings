@@ -331,5 +331,5 @@
     <string name="battery_stats_message">Battery usage data will be lost</string>
 
     <!-- Battery temperature -->
-    <string name="battery_temp">Battery temperature</string>
+    <string name="battery_temp">Temperature</string>
 </resources>
