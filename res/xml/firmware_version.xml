@@ -21,6 +21,12 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!-- PixelExtended Logo -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="pex_anim"
+        android:layout="@layout/pex_anim"
+        android:selectable="false"/>
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
