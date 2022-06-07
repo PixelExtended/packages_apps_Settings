@@ -83,12 +83,6 @@
         android:summary="@string/fullscreen_gestures_summary"
         android:defaultValue="false" />
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="navigation_bar_ime_space"
-        android:title="@string/navigation_bar_ime_space_title"
-        android:summary="@string/navigation_bar_ime_space_summary"
-        android:defaultValue="true"/>
-
         <Preference
             android:key="gesture_nav_custom_options"
             android:title="@string/navbar_gesture_tweaks_pref_title"
