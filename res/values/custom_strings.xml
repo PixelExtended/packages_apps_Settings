@@ -167,10 +167,6 @@
     <string name="device_maintainer">Device maintainer</string>
     <string name="device_maintainer_summary" translatable="false">Aryan Gupta</string>
 
-    <!--Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
-
     <!-- Doze on double tap -->
     <string name="double_tap_title">Double tap</string>
     <string name="doze_double_tap_title">Double tap to check phone</string>
