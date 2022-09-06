@@ -145,4 +145,7 @@
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Keep FOD enabled when the screen is off</string>
 
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use Black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
 </resources>
