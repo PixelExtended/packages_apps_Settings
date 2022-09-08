@@ -32,7 +32,7 @@ import com.android.settings.core.BasePreferenceController;
 
 public class PexLogoPreferenceController extends BasePreferenceController {
 
-    private static final Uri INTENT_URI_DATA = Uri.parse("https://pixelextended.ninja/");
+    private static final Uri INTENT_URI_DATA = Uri.parse("https://pixelextended.github.io/");
     private static final String TAG = "PexLogoPreferenceCtrl";
 
     private final PackageManager mPackageManager;
