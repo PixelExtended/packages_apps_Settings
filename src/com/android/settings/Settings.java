@@ -452,4 +452,7 @@ public class Settings extends SettingsActivity {
     // LiveDisplay
     public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 
+    // pixelExtended Additions.
+    public static class PextensionSettingsActivity extends SettingsActivity {}
+
 }
