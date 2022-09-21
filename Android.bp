@@ -44,7 +44,17 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: [
+           "src/**/*.java",
+           "src/**/*.kt",
+           "Pextension/src/**/*.java",
+          ],
+    resource_dirs: ["res",
+                    "Pextension/res",
+    ],
+
+    aaptflags: ["--extra-packages org.pixelextended.pextension",
+                "--extra-packages github.com.st235.lib_expandablebottombar",],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -78,6 +88,12 @@ android_library {
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
         "custom-preference",
+        "expandable-bottombar",
+        "androidx.navigation_navigation-common-ktx",
+        "androidx.navigation_navigation-fragment-ktx",
+        "androidx.navigation_navigation-runtime-ktx",
+        "androidx.navigation_navigation-ui-ktx",
+        "kotlin-stdlib",
     ],
 
     libs: [
@@ -133,4 +149,10 @@ filegroup {
 filegroup {
     name: "Settings_manifest",
     srcs: ["AndroidManifest.xml"],
+}
+
+android_library_import {
+    name: "expandable-bottombar",
+    aars: ["libs/lib-expandablebottombar-release.aar"],
+    sdk_version: "current",
 }
