@@ -49,13 +49,13 @@
         android:summary="@string/app_and_notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_apps"/>
 
-    <Preference
+    <com.android.settings.widget.HomepagePreference
+        android:fragment="org.pixelextended.pextension.Pextension"
+        android:icon="@drawable/ic_settings_extensions"
         android:key="top_level_extensions"
+        android:order="-130"
         android:title="@string/extensions_title"
         android:summary="@string/build_tweaks_summary_title"
-        android:icon="@drawable/ic_settings_extensions"
-        android:order="-130"
-        android:fragment="org.pixelextended.pextension.Pextension"
         settings:controller="org.pixelextended.pextension.TopLevelExtensionsEntryPreferenceController" />
 
     <com.android.settings.widget.HomepagePreference
