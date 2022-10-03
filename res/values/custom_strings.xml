@@ -36,4 +36,9 @@
     <!-- PEX version in About phone -->
     <string name="pex_version_title">Extended version</string>
 
+    <!-- PEX maintainer in About phone -->
+    <string name="pex_maintainer">Maintainer</string>
+    <string name="pex_maintainer_name" translatable="false">Team Pixel Extended</string>
+    <string name="pex_maintainer_group" translatable="false">https://pixelextended.github.io</string>
+
 </resources>
