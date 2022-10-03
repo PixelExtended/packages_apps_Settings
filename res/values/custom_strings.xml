@@ -134,4 +134,10 @@
 
     <!-- PEX version in About phone -->
     <string name="pex_version_title">Extended version</string>
+
+    <!-- PEX maintainer in About phone -->
+    <string name="pex_maintainer">Maintainer</string>
+    <string name="pex_maintainer_name" translatable="false">Aryan Gupta (heisinbug)</string>
+    <string name="pex_maintainer_group" translatable="false">https://t.me/pixelextended</string>
+
 </resources>
