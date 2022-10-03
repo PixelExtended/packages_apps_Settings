@@ -38,6 +38,17 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.PexVersionPreferenceController"/>
 
+   <!-- PEX Maintainer -->
+    <Preference
+        android:key="pex_maintainer"
+        android:title="@string/pex_maintainer"
+        android:summary="@string/pex_maintainer_name"
+        settings:enableCopying="true" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="@string/pex_maintainer_group"/>
+    </Preference>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"

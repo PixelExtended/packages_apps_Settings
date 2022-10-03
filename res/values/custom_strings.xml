@@ -136,4 +136,9 @@
     <string name="fullscreen_gestures_title">Fullscreen gestures</string>
     <string name="fullscreen_gestures_summary">Hide navbar pill and keyboard space</string>
 
+    <!-- PEX maintainer in About phone -->
+    <string name="pex_maintainer">Maintainer</string>
+    <string name="pex_maintainer_name" translatable="false">Aryan Gupta (heisinbug)</string>
+    <string name="pex_maintainer_group" translatable="false">https://t.me/pixelextended</string>
+
 </resources>
