@@ -33,6 +33,11 @@
     <!-- PEX version in About phone -->
     <string name="pex_version_title">Extended version</string>
 
+    <!-- PEX maintainer in About phone -->
+    <string name="pex_maintainer">Maintainer</string>
+    <string name="pex_maintainer_name" translatable="false">Aryan Gupta (heisinbug)</string>
+    <string name="pex_maintainer_group" translatable="false">https://t.me/pixelextended</string>
+
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
