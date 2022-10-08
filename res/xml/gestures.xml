@@ -94,6 +94,7 @@
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
+
     <Preference
         android:key="three_finger_gesture_summary"
         android:title="@string/swipe_to_screenshot_gesture_title"
@@ -105,6 +106,14 @@
         android:title="@string/power_button_torch_title"
         android:fragment="com.android.settings.gestures.PowerButtonTorchSettings"
         settings:controller="com.android.settings.gestures.PowerButtonTorchGesturePreferenceController" />
+
+    <Preference
+        android:key="double_tap"
+        android:fragment="com.android.settings.gestures.DoubleTapAmbientSettings"
+        android:title="@string/double_tap_title"
+        android:summary="@string/doze_double_tap_summary"
+        settings:userRestriction="no_ambient_display"
+        settings:controller="com.android.settings.gestures.DoubleTapAmbientPreferenceController" />
 
     <com.android.settingslib.PrimarySwitchPreference
         android:key="gesture_prevent_ringing_summary"
