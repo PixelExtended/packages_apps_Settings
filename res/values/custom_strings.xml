@@ -141,4 +141,8 @@
     <string name="pex_maintainer_name" translatable="false">Aryan Gupta (heisinbug)</string>
     <string name="pex_maintainer_group" translatable="false">https://t.me/pixelextended</string>
 
+    <!-- Screen off FOD -->
+    <string name="screen_off_fod_title">Screen off FOD</string>
+    <string name="screen_off_fod_summary">Keep FOD enabled when the screen is off</string>
+
 </resources>
