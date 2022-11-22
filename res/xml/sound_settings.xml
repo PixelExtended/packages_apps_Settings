@@ -233,11 +233,11 @@
         android:order="-27"/>
 
     <!-- In-call feedback -->
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+<!--    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="incall_feeedback_vibrate"
         android:title="@string/incall_feeedback_vibrate_title"
         android:defaultValue="false"
-        settings:controller="com.android.settings.sound.IncallFeedbackPreferenceController" />
+        settings:controller="com.android.settings.sound.IncallFeedbackPreferenceController" /> -->
 
     <!-- Dock speaker plays -->
     <DropDownPreference
