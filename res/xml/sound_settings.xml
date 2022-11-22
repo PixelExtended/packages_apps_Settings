@@ -204,12 +204,12 @@
         android:ringtoneType="alarm"
         android:order="-60"/>
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+<!--    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="show_app_volume"
         android:title="@string/app_volume_title"
         android:summary="@string/app_volume_summary"
         android:defaultValue="false"
-        android:order="-5"/>
+        android:order="-5"/> -->
 
     <!-- Dial pad tones -->
     <SwitchPreference
@@ -248,11 +248,11 @@
         android:order="-27"/>
 
     <!-- In-call feedback -->
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+<!--    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="incall_feeedback_vibrate"
         android:title="@string/incall_feeedback_vibrate_title"
         android:defaultValue="false"
-        settings:controller="com.android.settings.sound.IncallFeedbackPreferenceController" />
+        settings:controller="com.android.settings.sound.IncallFeedbackPreferenceController" /> -->
 
     <!-- Dock speaker plays -->
     <DropDownPreference
