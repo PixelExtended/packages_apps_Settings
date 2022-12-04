@@ -147,4 +147,8 @@
     <!-- Reverse Wireless Charging UI -->
     <string name="battery_share_description">Charge other devices by placing them on the back of your phone</string>
     <string name="battery_share">Battery share</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
