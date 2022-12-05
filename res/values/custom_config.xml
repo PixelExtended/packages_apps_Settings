@@ -23,4 +23,7 @@
              (true for some tablets) -->
     <integer name="config_volumeRockerVsDisplayOrientation">1</integer>
 
+    <!-- Diagonal Screen length provided -->
+    <string name="config_screen_diagonal_length" translatable="false"></string>
+
 </resources>
