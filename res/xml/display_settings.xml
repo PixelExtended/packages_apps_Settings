@@ -17,6 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
+    xmlns:aicpextras="http://schemas.android.com/apk/res-auto"
     android:key="display_settings_screen"
     android:title="@string/display_settings"
     settings:keywords="@string/keywords_display">
@@ -178,11 +179,6 @@
             android:title="@string/tap_to_wake"
             android:summary="@string/tap_to_wake_summary"/>
 
-        <SwitchPreference
-            android:key="pocket_judge"
-            android:title="@string/pocket_judge_title"
-            android:summary="@string/pocket_judge_summary" />
-
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="high_touch_polling_rate_enable"
             android:title="@string/high_touch_polling_rate_title"
@@ -220,4 +216,18 @@
             android:title="@string/display_vr_pref_title"
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"/>
     </PreferenceCategory>
+
+    <com.android.settings.custom.preference.SelfRemovingPreferenceCategory
+        android:key="enable_pocket_judge"
+        android:title="@string/pocket_judge_title"
+        aicpextras:requiresConfig="@*android:bool/config_pocketModeSupported" >
+
+        <SwitchPreference
+             android:key="pocket_judge"
+             android:title="@string/pocket_judge_title"
+             android:summary="@string/pocket_judge_summary"
+             android:persistent="false" />
+
+    </com.android.settings.custom.preference.SelfRemovingPreferenceCategory>
+
 </PreferenceScreen>
