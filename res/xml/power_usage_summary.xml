@@ -24,35 +24,42 @@
     <com.android.settingslib.widget.UsageProgressBarPreference
         android:key="battery_header"
         android:title="@string/summary_placeholder"
+        android:order="-7"
         android:selectable="false"
         settings:controller="com.android.settings.fuelgauge.BatteryHeaderPreferenceController" />
 
     <com.android.settingslib.widget.LayoutPreference
         android:key="battery_help_message"
+        android:order="-6"
         android:layout="@layout/preference_battery_error"
         android:selectable="false"
         settings:searchable="false" />
 
     <com.android.settings.widget.CardPreference
         android:key="battery_tip"
+        android:order="-5"
         android:title="@string/summary_placeholder"
         settings:controller="com.android.settings.fuelgauge.batterytip.BatteryTipPreferenceController" />
 
     <Preference
         android:fragment="com.android.settings.fuelgauge.batteryusage.PowerUsageAdvanced"
         android:key="battery_usage_summary"
+        android:order="-4"
         android:title="@string/advanced_battery_preference_title"
         settings:keywords="@string/keywords_battery_usage" />
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+   <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="battery_24_hrs_stats"
-        android:title="@string/advanced_battery_preference_summary_with_hours"
+        android:order="-3"
+        android:title="@string/advanced_battery_preference_summary_google"
+        android:summary="@string/advanced_battery_preference_google_summary"
         android:defaultValue="false"
         settings:searchable="false" />
 
-    <Preference
+   <Preference
         android:fragment="com.android.settings.fuelgauge.batterysaver.BatterySaverSettings"
         android:key="battery_saver_summary"
+        android:order="-2"
         android:title="@string/battery_saver"
         settings:keywords="@string/keywords_battery_saver"
         settings:controller="com.android.settings.fuelgauge.BatterySaverController" />
@@ -60,6 +67,7 @@
     <Preference
         android:fragment="com.android.settings.fuelgauge.SmartBatterySettings"
         android:key="smart_battery_manager"
+        android:order="-1"
         android:title="@string/smart_battery_manager_title"
         settings:controller="com.android.settings.fuelgauge.batterytip.BatteryManagerPreferenceController"
         settings:keywords="@string/keywords_battery_adaptive_preferences" />
@@ -67,34 +75,40 @@
     <!-- Battery light -->
     <SwitchPreference
         android:key="battery_light_enabled"
+        android:order="0"
         android:title="@string/battery_light_title"
         settings:controller="com.android.settings.notification.BatteryLightPreferenceController"/>
 
     <SwitchPreference
         android:key="battery_percentage"
+        android:order="1"
         android:title="@string/battery_percentage"
         android:summary="@string/battery_percentage_description"
         settings:controller="com.android.settings.display.BatteryPercentagePreferenceController" />
 
-    <SwitchPreference
+     <SwitchPreference
         android:key="fast_charging"
         android:title="@string/fast_charging_title"
         android:summary="@string/fast_charging_summary"
+        android:order="2"
         settings:controller="com.android.settings.fuelgauge.FastChargingPreferenceController"/>
 
     <SwitchPreference
         android:key="battery_share"
+        android:order="3"
         android:title="@string/battery_share"
         android:summary="@string/battery_share_description"
         settings:controller="com.android.settings.display.BatterySharePreferenceController" />
 
     <com.android.settings.fuelgauge.batteryusage.PowerGaugePreference
+        android:order="4"
         android:key="battery_temp"
         android:title="@string/battery_temp"
         android:selectable="false" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="power_usage_footer"
+        android:order="100"
         android:title="@string/battery_footer_summary"
         android:selectable="false"
         settings:searchable="false" />
