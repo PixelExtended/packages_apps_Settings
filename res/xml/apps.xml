@@ -84,7 +84,7 @@
         <intent android:action="android.intent.action.MANAGE_UNUSED_APPS"/>
     </Preference>
 
-    <Preference
+    <!--<Preference
         android:key="app_battery_usage"
         android:order="17"
         android:title="@string/app_battery_usage_title"
@@ -94,7 +94,7 @@
         <extra
             android:name="classname"
             android:value="com.android.settings.Settings$AppBatteryUsageActivity"/>
-    </Preference>
+    </Preference>-->
 
     <Preference
         android:key="special_access"
