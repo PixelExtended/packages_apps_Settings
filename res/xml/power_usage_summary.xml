@@ -99,9 +99,21 @@
         android:title="@string/battery_share"
         android:summary="@string/battery_share_description"
         settings:controller="com.android.settings.display.BatterySharePreferenceController" />
+        
+    <Preference
+        android:key="app_battery_usage"
+        android:order="4"
+        android:title="@string/app_battery_usage_title"
+        android:summary="@string/app_battery_usage_summary"
+        settings:controller="com.android.settings.applications.AppBatteryUsagePreferenceController"
+        android:fragment="com.android.settings.applications.manageapplications.ManageApplications">
+        <extra
+        android:name="classname"
+        android:value="com.android.settings.Settings$AppBatteryUsageActivity"/>
+    </Preference>
 
     <com.android.settings.fuelgauge.batteryusage.PowerGaugePreference
-        android:order="4"
+        android:order="5"
         android:key="battery_temp"
         android:title="@string/battery_temp"
         android:selectable="false" />
