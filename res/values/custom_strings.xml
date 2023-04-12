@@ -143,4 +143,6 @@
     <!-- Density category -->
     <string name="density_category">Density options</string>
 
+    <!-- Text shown for the title of the restart systemui option -->
+    <string name="power_menu_restart_systemui_title">Restart SystemUI</string>
 </resources>
