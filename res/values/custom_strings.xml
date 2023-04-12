@@ -157,4 +157,8 @@
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
     <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <string name="display_cutout_force_fullscreen_restart_app">Please restart the application to apply the changes.</string>
+
+
+    <!-- Text shown for the title of the restart systemui option -->
+    <string name="power_menu_restart_systemui_title">Restart SystemUI</string>
 </resources>
